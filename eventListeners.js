@@ -1,8 +1,12 @@
+import apiManager from "./apiManager.js"
+import DOMPrinter from "./DOMPrinter.js"
+
 const searchForRestaurant = () => {
-
-    createResultsContainer()
+    DOMPrinter.createResultsContainer()
     const searchInput = document.querySelector("#searchText").value.toLowerCase()
-    removeResults()
+    DOMPrinter.removeResults()
 
-    findRestaurant(searchInput) 
+    apiManager.findRestaurant(searchInput) 
 }
+
+export default searchForRestaurant

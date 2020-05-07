@@ -1,4 +1,7 @@
-createSearchBar()
+import DOMPrinter from "./DOMPrinter.js"
+import searchForRestaurant from "./eventListeners.js"
+
+DOMPrinter.createSearchBar()
 
 document.querySelector("#search-btn").addEventListener("click", function () {
     if(event.target.id === "search-btn"){
