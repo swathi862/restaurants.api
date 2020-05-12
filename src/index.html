@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport content=width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Restaurants</title>
+</head>
+
+<body>
+
+  <section>
+    <input id="restaurant-name" type="text" placeholder="Add a restaurant name here" size=28>
+    <input id="restaurant-URL" type="text" placeholder="Add restaurant URL here" size=28>
+    <input id="restaurant-menuURL" type="text" placeholder="Add restaurant menu URL here" size=28>
+    <input id="restaurant-userRating" type="text" placeholder="Add average user rating here" size=28>
+    <input id="restaurant-cost" type="text" placeholder="Add average cost for two here" size=28>
+    <input id="restaurant-address" type="text" placeholder="Add restaurant's address here" size=28>
+
+    <button id="submit-btn">Submit</button>
+  </section>
+  <div class="row" id="search-container">
+    <header>
+      <h1>Restaurants</h1>
+    </header>
+    <section id="search-bar"></section>
+  </div>
+
+  <div class="row" id="restaurant-container"></div>
+
+  <!-- <script src="DOMPrinter.js"></script>
+    <script src="apiManager.js"></script>
+    <script src="eventListeners.js"></script>
+    <script src="script.js"></script> -->
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
