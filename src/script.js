@@ -27,3 +27,15 @@ document.querySelector("body").addEventListener("click", () => {
         eventListeners.deleteRestaurant()
     }
 })
+
+document.querySelector("body").addEventListener("click", () => {
+    if (event.target.id.includes("edit-btn")) {
+        eventListeners.editRestaurant()
+    }
+})
+
+document.querySelector("body").addEventListener("click", () => {
+    if (event.target.id.includes("save-edit")) {
+        eventListeners.saveRestaurant()
+    }
+})

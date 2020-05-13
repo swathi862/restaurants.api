@@ -46,12 +46,9 @@ const apiManager = {
                 
                     DOMPrinter.createResultsContainer()
                     DOMPrinter.removeResults()
-                    console.log(parsedRestaurants)
-                    parsedRestaurants.forEach(singleRestaurant => {
-                        
-                        console.log(singleRestaurant)
+
+                    parsedRestaurants.forEach(singleRestaurant => { 
                         document.querySelector("#restaurant-list").innerHTML += DOMPrinter.createRestaurantCard(singleRestaurant)
-        
                     })
                 })
         })
@@ -74,8 +71,38 @@ const apiManager = {
                     })
                 })
         }) 
-    }
+    },
+    editNewRestaurant(id){
+        return fetch(`http://localhost:8088/restaurants/${id}`)
+        .then(r => r.json())
+        .then(restaurantToBeEdited => {
+                
+            console.log(`card-restaurant-${id}`)
 
+            document.querySelector(`#card-rest-${id}`).innerHTML = DOMPrinter.buildEditForm(restaurantToBeEdited);
+        })
+    },
+    saveNewRestaurant(id){
+        return fetch(`http://localhost:8088/restaurants/${id}`,{
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(DOMPrinter.createEditedRestaurantObject(id))
+        }).then(() => {
+            fetch("http://localhost:8088/restaurants")
+                .then(response => response.json())
+                .then(parsedRestaurants => {
+                    DOMPrinter.createResultsContainer()
+                    DOMPrinter.removeResults()
+                    parsedRestaurants.forEach(singleRestaurant => {
+                        
+                        console.log(singleRestaurant)
+                        document.querySelector("#restaurant-list").innerHTML += DOMPrinter.createRestaurantCard(singleRestaurant)
+                    })
+                })
+        }) 
+    }
 }
 
 export default apiManager

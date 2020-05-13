@@ -6,13 +6,14 @@ const DOMPrinter = {
         document.querySelector("#restaurant-list").innerHTML = ""
     },
     createRestaurantCard(restaurant){
-        const restaurantHTMLString = `<article class="card" id="card-restaurant">
+        const restaurantHTMLString = `<article class="card" id="card-rest-${restaurant.id}">
         <a href="${restaurant.url}"><h3>${restaurant.name}</h3></a>
         <p>Address: ${restaurant.address}<p>
         <p>User Rating: ${restaurant.averageUserRating}</p>
         <p>Average Cost for Two: $${restaurant.averageCostPerTwo}</p>
         <a href="${restaurant.menuURL}"><button>View Menu</button></a>
         <button id="delete-btn-${restaurant.id}">Delete</button>
+        <button id="edit-btn-${restaurant.id}">Edit</button>
         </article>`
 
         return restaurantHTMLString;
@@ -39,7 +40,34 @@ const DOMPrinter = {
         }
 
         return restaurantObject;
-    } 
+    },
+    buildEditForm (restaurant) {
+        const editCard = `
+        <form>
+            <input id="restaurant-name-edit" type="text" value ="${restaurant.name}" placeholder="Add a restaurant name here" autofocus />
+            <input id="restaurant-URL-edit" type="text" value = "${restaurant.url}" placeholder="Add restaurant URL here" autofocus />
+            <input id="restaurant-menuURL-edit" type="text" value = "${restaurant.menuURL}" placeholder="Add restaurant menu URL here" autofocus />
+            <input id="restaurant-userRating-edit" type="text" value = "${restaurant.averageUserRating}" placeholder="Add average user rating here" autofocus />
+            <input id="restaurant-cost-edit" type="text" value = "${restaurant.averageCostPerTwo}" placeholder="Add average cost for two here" autofocus />
+            <input id="restaurant-address-edit" type="text" value = "${restaurant.address}" placeholder="Add restaurant's address here" autofocus />
+        </form>
+            <button id="save-edit-${restaurant.id}">Save</button>
+        `
+        return editCard
+    },
+    createEditedRestaurantObject(id){
+        const editedRestaurant = {
+            id: `${id}`,
+            url: document.querySelector("#restaurant-URL-edit").value,
+            menuURL: document.querySelector("#restaurant-menuURL-edit").value,
+            name: document.querySelector("#restaurant-name-edit").value,
+            averageUserRating: document.querySelector("#restaurant-userRating-edit").value,
+            averageCostPerTwo: document.querySelector("#restaurant-cost-edit").value,
+            address: document.querySelector("#restaurant-address-edit").value
+        }
+
+        return editedRestaurant;
+    }
 }
 
 export default DOMPrinter

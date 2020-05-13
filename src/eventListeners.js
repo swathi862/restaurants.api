@@ -16,10 +16,17 @@ const eventListeners = {
         apiManager.addNewRestaurant()
     },
     deleteRestaurant(){
-        DOMPrinter.createResultsContainer()
-        DOMPrinter.removeResults()
-        
         apiManager.deleteNewRestaurant()
+    },
+    editRestaurant(){
+        const editID = event.target.id.split("-")[2]
+
+        apiManager.editNewRestaurant(editID)
+    },
+    saveRestaurant(){
+        const saveID = event.target.id.split("-")[2]
+
+        apiManager.saveNewRestaurant(saveID)
     } 
 }
 

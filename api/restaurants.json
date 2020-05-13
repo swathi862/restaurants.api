@@ -19,13 +19,22 @@
       "address": "1259 Sidco Drive"
     },
     {
+      "id": 3,
       "url": "rubis.com",
       "menuURL": "rubis.com/menu",
       "name": "Rubi's",
       "averageUserRating": "4.5",
-      "averageCostPerTwo": "24",
-      "address": "Parkersburg, WV",
-      "id": 5
+      "averageCostPerTwo": "25",
+      "address": "Parkersburg, WV"
+    },
+    {
+      "url": "www.davincis.com",
+      "menuURL": "www.davincis.com/menu",
+      "name": "DaVincis",
+      "averageUserRating": "4",
+      "averageCostPerTwo": "$20",
+      "address": "Williamstown, WV",
+      "id": 4
     }
   ]
 }
