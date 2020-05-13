@@ -28,13 +28,13 @@
       "address": "Parkersburg, WV"
     },
     {
+      "id": 4,
       "url": "www.davincis.com",
       "menuURL": "www.davincis.com/menu",
       "name": "DaVincis",
       "averageUserRating": "4",
-      "averageCostPerTwo": "$20",
-      "address": "Williamstown, WV",
-      "id": 4
+      "averageCostPerTwo": "20",
+      "address": "Williamstown, WV"
     }
   ]
 }
