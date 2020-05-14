@@ -35,6 +35,15 @@
       "averageUserRating": "4",
       "averageCostPerTwo": "20",
       "address": "Williamstown, WV"
+    },
+    {
+      "url": "cookout.com",
+      "menuURL": "cookout.com/menu",
+      "name": "Cookout",
+      "averageUserRating": "4.6",
+      "averageCostPerTwo": "12",
+      "address": "Huntington, WV",
+      "id": 5
     }
   ]
 }

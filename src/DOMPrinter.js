@@ -51,7 +51,7 @@ const DOMPrinter = {
             <input id="restaurant-cost-edit" type="text" value = "${restaurant.averageCostPerTwo}" placeholder="Add average cost for two here" autofocus />
             <input id="restaurant-address-edit" type="text" value = "${restaurant.address}" placeholder="Add restaurant's address here" autofocus />
         </form>
-            <button id="save-edit-${restaurant.id}">Save</button>
+            <button id="save-edit-${restaurant.id}">Save Changes</button>
         `
         return editCard
     },
